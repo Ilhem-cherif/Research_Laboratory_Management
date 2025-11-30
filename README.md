@@ -14,15 +14,15 @@ LabRMS provides comprehensive management capabilities across key lab domains:
 ---
 
 ## 📐 Project Architecture
-├── laboratory_backend_springboot/ # Backend Microservices (Spring Boot, Maven)
-│   ├── config-service
-│   ├── registry-service
-│   ├── gateway
-│   ├── membre-service
-│   ├── outil-service
-│   ├── evenement-service
-│   └── publication-service
-└── laboratory_frontend_angular/ # Frontend Application (Angular, TypeScript)
+* **`laboratory_backend_springboot/`** # Backend Microservices
+    * `config-service`
+    * `registry-service`
+    * `gateway`
+    * `membre-service`
+    * `outil-service`
+    * `evenement-service`
+    * `publication-service`
+* **`laboratory_frontend_angular/`** # Frontend Application
 
 ---
 
