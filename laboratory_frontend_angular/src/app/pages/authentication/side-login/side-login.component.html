@@ -1,0 +1,111 @@
+<div class="blank-layout-container justify-content-center">
+  <div class="auth-wrapper">
+    <div class="position-relative shaper-wrapper">
+      <div class="w-100 position-relative rounded bg-white auth-card">
+        <div class="auth-body">
+          <!-- Logo Section -->
+          <a [routerLink]="['/dashboards/dashboard1']" class="m-t-20 d-flex">
+            <img
+              src="./assets/images/logos/dark-logo.svg"
+              class="align-middle m-2"
+              alt="logo"
+            />
+          </a>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div
+                class="align-items-center justify-content-center d-none d-lg-flex"
+              >
+                <img
+                  src="/assets/images/backgrounds/login3-bg.png"
+                  alt="login"
+                  style="max-width: 500px"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div
+                class="d-flex align-items-start align-items-lg-center justify-content-center"
+              >
+                <div class="row justify-content-center w-100">
+                  <div class="col-lg-11">
+                    <h4
+                      class="f-w-700 f-s-30 m-0 m-t-20"
+                      style="line-height: 1.4"
+                    >
+                      Welcome to the Research Lab Management System
+                    </h4>
+                    <span class="f-s-14 d-block mat-body-1 m-t-8">
+                      Manage your research laboratory, members, publications,
+                      tools, and events efficiently.
+                    </span>
+
+                    <!-- Separator -->
+                    <div class="or-border m-t-30">or sign in with</div>
+
+                    <!-- Login Form -->
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                      <mat-form-field
+                        appearance="outline"
+                        class="w-100"
+                        color="primary"
+                      >
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="uname" />
+                        <mat-hint
+                          *ngIf="f['uname'].touched && f['uname'].invalid"
+                        >
+                          <div *ngIf="f['uname'].errors?.['required']">
+                            Email is required.
+                          </div>
+                          <div *ngIf="f['uname'].errors?.['email']">
+                            Please enter a valid email.
+                          </div>
+                        </mat-hint>
+                      </mat-form-field>
+
+                      <mat-form-field
+                        appearance="outline"
+                        class="w-100"
+                        color="primary"
+                      >
+                        <mat-label>Password</mat-label>
+                        <input
+                          matInput
+                          type="password"
+                          formControlName="password"
+                        />
+                        <mat-hint
+                          *ngIf="f['password'].touched && f['password'].invalid"
+                        >
+                          <div *ngIf="f['password'].errors?.['required']">
+                            Password is required.
+                          </div>
+                        </mat-hint>
+                      </mat-form-field>
+
+                      <div *ngIf="errorMessage" class="text-error">
+                        {{ errorMessage }}
+                      </div>
+
+                      <button
+                        mat-flat-button
+                        color="primary"
+                        class="w-100"
+                        [disabled]="!form.valid"
+                      >
+                        Sign In
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
